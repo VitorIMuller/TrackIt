@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Pacifico&display=swap');
+
+
+*{
+    box-sizing: border-box;
+}
+body {
+    width: 375px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
