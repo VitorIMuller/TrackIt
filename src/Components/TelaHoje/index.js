@@ -1,8 +1,13 @@
-function TelaHoje(){
-    return(
-        <h1>Oi bb
+import Topo from "../TopBar"
 
-        </h1>
+function TelaHoje({token}){
+    console.log(token)
+    return(
+       <Topo></Topo>
+
     )
 }
 export default TelaHoje
+
+
+

@@ -6,11 +6,14 @@ import axios from 'axios'
 import Input from '../Input';
 import Button from "../Button"
 import { useNavigate } from "react-router-dom";
+// import Loading from "../Loading"
 
 
-function LoginPage(){
+function LoginPage({setToken}){
     const[email, setEmail]= useState('')
     const[senha, setSenha] = useState('')
+    // const[isLoading, setIsLoading] = useState(false)
+    
     const navigate = useNavigate();
 
     function handleSignUp(e){
@@ -21,11 +24,14 @@ function LoginPage(){
             'password': senha
         }
 
-       const promisse =  axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login', user)
-       promisse.then(response => console.log(response),
-       navigate('/hoje')
-       )
-       promisse.catch(() => alert('Usuário e/ou Senha Inválidos'))
+       const promise =  axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login', user);
+      
+       promise.then( response=>
+        setToken(response.data.token), 
+        navigate('/hoje'), 
+    //    setIsLoading(true)
+       );
+       promise.catch(error => alert('Usuário e/ou Senha Inválidos'));
     }
 
     return(
@@ -44,7 +50,13 @@ function LoginPage(){
                 placeholder="senha" 
                 onChange={(e)=> setSenha(e.target.value)} 
                 value={senha}/>
-                <Button type="submit">Entrar</Button>
+                <Button type="submit">
+                    {/* {isLoading==true?
+                    <Loading/> : 'Entrar'
+                    } */}
+                    Entrar
+                    
+                </Button>
             </form>
             <StyledLink to="/cadastro"> Não tem uma conta? cadastre-se!</StyledLink>
         </Dados>

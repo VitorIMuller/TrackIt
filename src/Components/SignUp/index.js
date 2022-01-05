@@ -5,6 +5,7 @@ import {Dados, StyledLink} from './style'
 import Input from "../Input"
 import Button from "../Button"
 import axios from 'axios'
+import Loader from "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 
 function SignUpPage(){
@@ -27,6 +28,7 @@ function SignUpPage(){
 
        const promisse =  axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/sign-up', user)
        promisse.then(response => console.log(response),
+    
        navigate("/")
        )
        promisse.catch(error => alert(error.response.data.message))
