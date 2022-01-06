@@ -1,11 +1,17 @@
+import { useContext } from "react/cjs/react.development"
 import styled from "styled-components"
+import UserContext from "../../Contexts/UserContext"
 import img from '../logo-trackit.png'
 
 function Topo(){
+
+    const{usuario, setUsuario} = useContext(UserContext)
+
+
     return(
        <Header>
            <Title>TrackIt</Title>
-           <Imagem src={img}></Imagem>
+           <Imagem src={usuario.image}></Imagem>
        </Header>
     )
 }
@@ -25,7 +31,7 @@ const Header = styled.div`
     
 `
 const Title = styled.div`
-@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+    
     font-size: 40px;
     font-weight: 400;
     color: white;

@@ -1,19 +1,21 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import logo from '../logo-trackit.png'
 import {Dados, StyledLink} from './style'
 import axios from 'axios'
-
+import UserContext from "../../Contexts/UserContext"
 import Input from '../Input';
 import Button from "../Button"
 import { useNavigate } from "react-router-dom";
 // import Loading from "../Loading"
 
 
-function LoginPage({setToken}){
+function LoginPage(){
+    const {usuario, setUsuario} = useContext(UserContext)
+    const {token, setToken} = useContext(UserContext)
     const[email, setEmail]= useState('')
     const[senha, setSenha] = useState('')
     // const[isLoading, setIsLoading] = useState(false)
-    
+
     const navigate = useNavigate();
 
     function handleSignUp(e){
@@ -24,14 +26,16 @@ function LoginPage({setToken}){
             'password': senha
         }
 
-       const promise =  axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login', user);
-      
-       promise.then( response=>
-        setToken(response.data.token), 
-        navigate('/hoje'), 
-    //    setIsLoading(true)
-       );
-       promise.catch(error => alert('Usuário e/ou Senha Inválidos'));
+        const promise =  axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login', user);
+                promise.then( response=>{
+                    setUsuario(response.data);
+                    setToken(response.data.token)
+                    navigate('/hoje')
+                } 
+                );
+                promise.catch(()=> 
+                    alert('Usuário e/ou Senha Inválidos')
+                );
     }
 
     return(

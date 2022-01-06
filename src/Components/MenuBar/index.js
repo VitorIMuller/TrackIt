@@ -45,7 +45,7 @@ const Header = styled.div`
     bottom: 0;
 
     padding-bottom: 20px;
-    @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Pacifico&display=swap');
+    
     font-family: 'Lexend Deca', sans-serif;
    
 
@@ -58,6 +58,6 @@ const Option = styled(Link)`
     margin-left: 35px;
     margin-right: 35px;
     padding-top: 40px;
-    @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Pacifico&display=swap');
+  
     font-family: 'Lexend Deca', sans-serif;
 `

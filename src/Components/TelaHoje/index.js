@@ -1,23 +1,27 @@
 import Menu from "../MenuBar"
 import Topo from "../TopBar"
-import {Title, Message, Container, ContainerTitle, AddHabito} from "./style"
-import { useState } from "react"
+import {Container, Title} from "./style"
+import { useState, useContext } from "react"
+import UserContext from "../../Contexts/UserContext"
+import dayjs from "dayjs"
+import 'dayjs/locale/pt-br'
 
-function TelaHoje({token}){
+
+
+function TelaHoje(){
+    const {token, setToken} = useContext(UserContext)
+    const {usuario, setUsuario} = useContext(UserContext)
     console.log(token)
+    console.log(usuario)
     
-    const[habito, setHabito] = useState("Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!")
+    console.log(dayjs())
     return(
         <>
             <Container>
                 <Topo></Topo>
-                <ContainerTitle>
-                    <Title>Meus Hábitos</Title>
-                    <AddHabito>+</AddHabito>
-                </ContainerTitle>
-                <Message>{habito}</Message>
+                <Title>{dayjs().locale('pt-br').format('dddd, DD/MM')}</Title>
                 <Menu></Menu>
-        </Container>
+            </Container>
         </>
         
     )
