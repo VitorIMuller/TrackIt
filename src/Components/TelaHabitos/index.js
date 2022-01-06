@@ -6,6 +6,7 @@ import UserContext from "../../Contexts/UserContext"
 import styled from "styled-components"
 import Input from "../Input"
 import Loading from "../Loading"
+import axios from "axios"
 
 
 function TelaHabitos(){
@@ -76,7 +77,21 @@ function TelaHabitos(){
 
 
     function postHabit(){
-        console.log('oi')
+        setButton(false);
+        const body = {
+            name: nomeHabito,
+            days: DiasSelecionados
+        }
+        const config = {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            } 
+        }
+
+        const promise = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits", body, config)
+        promise.then(console.log("oi"),
+        setButton(true))
+        promise.catch(console.log("erro"))
     }
 
     return(
@@ -128,7 +143,7 @@ function TelaHabitos(){
                                 </StyledButton>
                                 :
                                 <StyledButton
-                                loading={true}
+                                
                                 width={84}
                                 height={35}>
                                 <Loading height={35} width={43} />
