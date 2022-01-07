@@ -13,7 +13,14 @@ function App(){
     const[numeroDeHabitos, setNumeroDeHabitos] = useState(0);
     const[numeroDeHabitosConcluidos, setnumeroDeHabitosConcluidos] = useState(0);
     const[progresso, setProgresso] = useState(0)
-
+    
+    // function saveUsuario(response){
+    //     setUsuario(response)
+    //     localStorage.setItem("id", response.id);
+    //     localStorage.setItem("image", response.image);
+    //     localStorage.setItem("name", response.name);
+    //     localStorage.setItem("token", response.token);
+    // }
 
     
     return(
@@ -25,7 +32,8 @@ function App(){
         numeroDeHabitosConcluidos, 
         setnumeroDeHabitosConcluidos,
         progresso,
-        setProgresso}}>
+        setProgresso,
+        }}>
         <BrowserRouter>
             <Routes>
                     

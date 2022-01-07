@@ -1,4 +1,4 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import logo from '../logo-trackit.png'
 import {Dados, StyledLink} from './style'
 import axios from 'axios'
@@ -9,8 +9,9 @@ import { useNavigate } from "react-router-dom";
 import Loading from "../Loading"
 
 
+
 function LoginPage(){
-    const {usuario, setUsuario} = useContext(UserContext)
+    const {usuario, setUsuario, saveUsuario} = useContext(UserContext)
     const[email, setEmail]= useState('')
     const[senha, setSenha] = useState('')
     const[button, setButton] = useState(true)
@@ -40,6 +41,16 @@ function LoginPage(){
                 }
                 );
     }
+    // useEffect((() => {
+    //     setUsuario({
+    //         id: localStorage.getItem("id"),
+    //         image: localStorage.getItem("image"),
+    //         name: localStorage.getItem("name"),
+    //         token: localStorage.getItem("token")
+    //     });
+    // }), []);
+
+    // if(usuario.token) navigate.push("/hoje")
 
     return(
         <>
