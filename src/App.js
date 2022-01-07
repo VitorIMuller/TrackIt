@@ -10,8 +10,8 @@ import UserContext from "./Contexts/UserContext";
 
 function App(){
     const[usuario, setUsuario]=useState()
-    const [numeroDeHabitos, setNumeroDeHabitos] = useState(0);
-    const [numeroDeHabitosConcluidos, setnumeroDeHabitosConcluidos] = useState(0);
+    const[numeroDeHabitos, setNumeroDeHabitos] = useState(0);
+    const[numeroDeHabitosConcluidos, setnumeroDeHabitosConcluidos] = useState(0);
     const[progresso, setProgresso] = useState(0)
 
 
@@ -36,8 +36,6 @@ function App(){
                     <Route path="/habitos" element={<TelaHabitos />}/>
             </Routes>
         </BrowserRouter>
-                    
-    
     </UserContext.Provider>
     )
 } export default App

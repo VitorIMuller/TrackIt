@@ -52,7 +52,7 @@ const AddHabito = styled.div`
 const TitleHabito = styled.div`
     font-family: 'Lexend Deca', sans-serif;
     font-size: 23px;
-    color: #126BA5;
+    color: #666666;
     font-weight: 400;
 
 `

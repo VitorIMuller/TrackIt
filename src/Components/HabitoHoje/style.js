@@ -1,6 +1,4 @@
 import styled from "styled-components"
-
-
 const Container = styled.div`
     width: 100%;
     display: flex;
@@ -53,10 +51,45 @@ const TitleHabito = styled.div`
     font-weight: 400;
 
 `
+const Subtitle = styled.div`
+    font-family: 'Lexend Deca', sans-serif;
+    color: #666666;
+    font-size: 13px;
+    font-weight: 400;
+
+`
+const Sequencia = styled.span`
+    color: ${props => props.done ? "#8FC549" : "#666666"}; 
+`;
+
+const Recorde = styled.span`
+    color: ${props => props.recorde ? "#8FC549" : "#666666"}; 
+`
+
+
+const Check = styled.div`
+    width: 69px;
+    height: 69px;
+    min-width: 69px;
+    max-height: 69px;
+    border-radius: 5px;
+    font-size: 44px;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${props => props.feito ? "#8FC549" : "#EBEBEB"};
+    transition: 300ms;
+`;
+
 export{
     Container,
     Title,
     Message,
     ContainerHabitoToday,
-    TitleHabito
+    TitleHabito,
+    Subtitle,
+    Sequencia,
+    Recorde,
+    Check
 }

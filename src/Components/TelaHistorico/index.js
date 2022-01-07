@@ -1,13 +1,10 @@
 import Menu from "../MenuBar"
 import Topo from "../TopBar"
-import UserContext from "../../Contexts/UserContext"
-import { useContext } from "react"
 import {Title, Message, Container} from "./style"
 
 
 
 function TelaHistorico(){
-    const {usuario, setUsuario} = useContext(UserContext)
     
     return(
         <Container>

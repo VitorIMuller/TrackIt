@@ -90,7 +90,7 @@ function TelaHabitos(){
         promise.then(()=>{setButton(true);
             setAdicionarHabito(false);
             setNomeHabito("");
-            setNumeroDeHabitos(numeroDeHabitos+1);
+            setNumeroDeHabitos(numeroDeHabitos + 1);
             getHabito()
             
 
@@ -135,7 +135,7 @@ function TelaHabitos(){
 
     useEffect((getHabito), [])
 
-    console.log(habito)
+    
     return(
         <>
             <Topo></Topo>

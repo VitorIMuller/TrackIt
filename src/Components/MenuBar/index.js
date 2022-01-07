@@ -10,7 +10,8 @@ function Menu(){
 
     const {progresso, setProgresso, numeroDeHabitos, numeroDeHabitosConcluidos } = useContext(UserContext)
     
-    setProgresso(0);
+    setProgresso(Math.round((numeroDeHabitosConcluidos/numeroDeHabitos)*100));
+    
 
 
     return(
