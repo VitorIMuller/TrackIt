@@ -13,8 +13,6 @@ function TelaHistorico(){
             <Message>Em breve você poderá ver o histórico dos seus hábitos aqui!</Message>
             <Menu></Menu>
         </Container>
-        
-        
     )
 }
 export default TelaHistorico

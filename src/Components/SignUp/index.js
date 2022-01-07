@@ -30,7 +30,6 @@ function SignUpPage(){
 
        const promisse =  axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/sign-up', user)
        promisse.then(() =>
-        
        navigate("/")
        )
        promisse.catch(error => alert(error.response.data.message))
@@ -43,10 +42,10 @@ function SignUpPage(){
         <img src={logo}/>
         <Dados>
             <form onSubmit={handleSignUp}>
-                <Input type='email' placeholder="email" onChange={(e)=> setEmail(e.target.value)} value={email} required/>
-                <Input type='password' placeholder="senha" onChange={(e)=> setSenha(e.target.value)} value={senha}/>
-                <Input type='text' placeholder="nome" onChange={(e)=> setNome(e.target.value)} value={name}/>
-                <Input type='text' placeholder="foto" onChange={(e)=> setImage(e.target.value)} value={image}/>
+                <Input type='email' placeholder="Email" onChange={(e)=> setEmail(e.target.value)} value={email} required/>
+                <Input type='password' placeholder="Senha" onChange={(e)=> setSenha(e.target.value)} value={senha}/>
+                <Input type='text' placeholder="Nome" onChange={(e)=> setNome(e.target.value)} value={name}/>
+                <Input type='text' placeholder="Foto(URL)" onChange={(e)=> setImage(e.target.value)} value={image}/>
                 {button ? 
                     <Button type="submit" onClick={()=>setButton(false)}>Cadastrar</Button> 
                     :

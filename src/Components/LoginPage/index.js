@@ -59,13 +59,13 @@ function LoginPage(){
             <form onSubmit={handleSignUp}>
                 <Input 
                 type='email' 
-                placeholder="email" 
+                placeholder="Email" 
                 onChange={(e)=> setEmail(e.target.value)} 
                 value={email} 
                 required/>
                 <Input 
                 type='password' 
-                placeholder="senha" 
+                placeholder="Senha" 
                 onChange={(e)=> setSenha(e.target.value)} 
                 value={senha}/>
                 {button ? 
