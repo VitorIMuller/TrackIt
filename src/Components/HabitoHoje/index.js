@@ -3,7 +3,6 @@ import {ContainerHabitoToday, Title, TitleHabito, Subtitle,Sequencia, Recorde,Ch
 import { useState, useContext } from "react"
 import UserContext from "../../Contexts/UserContext"
 import styled from "styled-components"
-import { useEffect } from "react/cjs/react.development"
 import axios from "axios"
 
 

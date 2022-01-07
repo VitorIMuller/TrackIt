@@ -6,7 +6,7 @@ import UserContext from "../../Contexts/UserContext"
 import dayjs from "dayjs"
 import 'dayjs/locale/pt-br'
 import styled from "styled-components"
-import { useEffect } from "react/cjs/react.development"
+import { useEffect } from "react"
 import axios from "axios"
 import HabitoHoje from "../HabitoHoje"
 
