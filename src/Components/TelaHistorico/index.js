@@ -7,10 +7,7 @@ import {Title, Message, Container} from "./style"
 
 
 function TelaHistorico(){
-    const {token, setToken} = useContext(UserContext)
     const {usuario, setUsuario} = useContext(UserContext)
-    console.log(token)
-
     
     return(
         <Container>

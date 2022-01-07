@@ -1,4 +1,4 @@
-import { useContext } from "react/cjs/react.development"
+import { useContext } from "react"
 import styled from "styled-components"
 import UserContext from "../../Contexts/UserContext"
 import img from '../logo-trackit.png'
@@ -28,6 +28,7 @@ const Header = styled.div`
 
     position: fixed;
     top: 0;
+    z-index: 4;
     
 `
 const Title = styled.div`

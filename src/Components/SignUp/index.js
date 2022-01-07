@@ -5,7 +5,8 @@ import {Dados, StyledLink} from './style'
 import Input from "../Input"
 import Button from "../Button"
 import axios from 'axios'
-import Loader from "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loading from "../Loading"
+
 
 
 function SignUpPage(){
@@ -13,6 +14,7 @@ function SignUpPage(){
     const[senha, setSenha] = useState('')
     const[name, setNome]= useState('')
     const[image, setImage]= useState('')
+    const[button, setButton] = useState(true)
     const navigate = useNavigate();
 
     function handleSignUp(e){
@@ -27,8 +29,8 @@ function SignUpPage(){
         }
 
        const promisse =  axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/sign-up', user)
-       promisse.then(response => console.log(response),
-    
+       promisse.then(() =>
+        
        navigate("/")
        )
        promisse.catch(error => alert(error.response.data.message))
@@ -45,7 +47,12 @@ function SignUpPage(){
                 <Input type='password' placeholder="senha" onChange={(e)=> setSenha(e.target.value)} value={senha}/>
                 <Input type='text' placeholder="nome" onChange={(e)=> setNome(e.target.value)} value={name}/>
                 <Input type='text' placeholder="foto" onChange={(e)=> setImage(e.target.value)} value={image}/>
-                <Button type="submit">Cadastrar</Button>
+                {button ? 
+                    <Button type="submit" onClick={()=>setButton(false)}>Cadastrar</Button> 
+                    :
+                    <Button Loading={true}><Loading height={35} width={43} /></Button>
+
+                }
             </form>
             <StyledLink to="/"> Já tem uma conta? Faça login!</StyledLink>
             

@@ -1,6 +1,6 @@
 import Menu from "../MenuBar"
 import Topo from "../TopBar"
-import {Container, Title} from "./style"
+import {Container, Message, Title} from "./style"
 import { useState, useContext } from "react"
 import UserContext from "../../Contexts/UserContext"
 import dayjs from "dayjs"
@@ -9,17 +9,14 @@ import 'dayjs/locale/pt-br'
 
 
 function TelaHoje(){
-    const {token, setToken} = useContext(UserContext)
     const {usuario, setUsuario} = useContext(UserContext)
-    console.log(token)
-    console.log(usuario)
-    
-    console.log(dayjs())
+    const {progresso} = useContext(UserContext)
     return(
         <>
             <Container>
                 <Topo></Topo>
                 <Title>{dayjs().locale('pt-br').format('dddd, DD/MM')}</Title>
+                <Message>{progresso === 0 ? "Nenhum hábito concluido ainda" : progresso + "% dos hábitos concluídos" }</Message>
                 <Menu></Menu>
             </Container>
         </>

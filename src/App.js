@@ -10,14 +10,25 @@ import UserContext from "./Contexts/UserContext";
 
 function App(){
     const[usuario, setUsuario]=useState()
-    const[token, setToken] = useState('')
+    const [numeroDeHabitos, setNumeroDeHabitos] = useState(0);
+    const [numeroDeHabitosConcluidos, setnumeroDeHabitosConcluidos] = useState(0);
+    const[progresso, setProgresso] = useState(0)
+
 
     
     return(
-    <UserContext.Provider value={{token, setToken, setUsuario, usuario}}>
-    
+    <UserContext.Provider value={{
+        setUsuario, 
+        usuario, 
+        numeroDeHabitos, 
+        setNumeroDeHabitos, 
+        numeroDeHabitosConcluidos, 
+        setnumeroDeHabitosConcluidos,
+        progresso,
+        setProgresso}}>
         <BrowserRouter>
             <Routes>
+                    
                     <Route path="/" element={<LoginPage />} />
                     <Route path="/cadastro" element={<SignUpPage/>}  /> 
                     <Route path="/hoje" element={<TelaHoje/>}/>
@@ -25,6 +36,7 @@ function App(){
                     <Route path="/habitos" element={<TelaHabitos />}/>
             </Routes>
         </BrowserRouter>
+                    
     
     </UserContext.Provider>
     )

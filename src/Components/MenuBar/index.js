@@ -2,11 +2,17 @@ import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-
+import { useContext } from "react";
+import UserContext from "../../Contexts/UserContext";
 
 
 function Menu(){
-    const percentage = 66;
+
+    const {progresso, setProgresso, numeroDeHabitos, numeroDeHabitosConcluidos } = useContext(UserContext)
+    
+    setProgresso(0);
+
+
     return(
        <Header>
            <Option to="/habitos">Hábitos</Option>
@@ -14,7 +20,7 @@ function Menu(){
             <CircularProgressbar 
             minValue={0}
             maxValue={100}
-            value={percentage}
+            value={progresso}
             text="Hoje"
             background={true}
             styles={buildStyles({

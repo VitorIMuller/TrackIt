@@ -49,10 +49,18 @@ const AddHabito = styled.div`
     border-radius: 5px;
 
 `
+const TitleHabito = styled.div`
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 23px;
+    color: #126BA5;
+    font-weight: 400;
+
+`
 export{
     Title,
     Message,
     Container,
     ContainerTitle,
-    AddHabito
+    AddHabito,
+    TitleHabito
 }
