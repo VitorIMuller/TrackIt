@@ -1,4 +1,4 @@
-# My Wallet
+# TrackIt
 
 
 ## About
